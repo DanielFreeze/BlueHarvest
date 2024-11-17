@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box; 
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: white;
+            scroll-behavior: smooth;
+            overflow-x: hidden; 
+        }
+
+        nav {
+            background: black;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: yellowgreen;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            flex-shrink: 0; 
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+        .social-icons a:hover {
+            color: yellowgreen;
+        }
+
+        .content {
+            padding-top: 80px;
+            text-align: center;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .wrapper img {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 48px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .section-subtitle {
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: darkgray;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .wide-image img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
+        }
+
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/MyLogo.png" alt="Logo">
+            <span>DANIEL FREEZE</span>
+        </div>
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Visual Development.html">Visual Development</a>
+            <a href="Prop Design.html">Prop Design</a>
+            <a href="Contact.html">Contact & About</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="wrapper">
+            <a href="#garbage-section"><img src="img/garbage.jpg" alt="Garbage Image"></a>
+            <a href="#indiana-section"><img src="img/IndianaJones.jpg" alt="Indy Image"></a>
+            <a href="#city-section"><img src="img/cityconcept.jpg" alt="City Image"></a>
+            <a href="#penguin-section"><img src="img/penguinmafia.jpg" alt="Penguin Image"></a>
+            <a href="#city2-section"><img src="img/back2school.jpg" alt="City Image"></a>
+        </div>
+
+        <div id="garbage-section" class="wide-image section">
+            <div class="section-title">GARBAGE TRUCK</div>
+            <div class="section-subtitle">Selection of visual development for "Raccoons VS Trash Truck"</div>
+            <img src="img/TruckBreakdown.jpg" alt="Truck Breakdown">
+        </div>
+
+        <div id="indiana-section" class="wide-image section">
+            <div class="section-title">INDIANA JONES</div>
+            <div class="section-subtitle">Selection of visual development for "Indiana Jones the Animated Series."</div>
+            <img src="img/Indiana.jpg" alt="Indiana">
+        </div>
+
+        <div id="city-section" class="wide-image section">
+            <div class="section-title">DFW MASHUP</div>
+            <div class="section-subtitle">Mashup between Dallas and Fort Worth skylines, alternates included.</div>
+            <img src="img/citybreakdown.jpg" alt="City Breakdown">
+        </div>
+        <div id="penguin-section" class="wide-image section">
+            <div class="section-title">PENGUIN MAFIA</div>
+            <div class="section-subtitle">Selection of visual development for "Penguin Mafia."</div>
+            <img src="img/themafia.jpg" alt="Penguin Mafia">
+        </div>
+          <div id="city2-section" class="wide-image section">
+            <div class="section-title">SCHOOL BUS</div>
+            <div class="section-subtitle">Selection of visual development for "Back 2 School."</div>
+            <img src="img/widebus.jpg" alt="Back2School">
+        </div>
+</body>
+</html>

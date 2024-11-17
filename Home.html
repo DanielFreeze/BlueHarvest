@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Screen - Artwork Gallery</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Roboto', sans-serif; background-color: black; }
+
+        nav {
+            background: black; color: white; padding: 15px; position: fixed; width: 100%; top: 0; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 1000;
+            height: 60px; 
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; display: flex; align-items: center;
+            gap: 10px; 
+        }
+
+        .logo img {
+            height: 40px; 
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .logo a:hover {
+            color: yellowgreen;
+        }
+
+        .nav-links {
+            display: flex; align-items: center; flex-grow: 1; justify-content: flex-end;
+        }
+
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 16px; font-weight: 500; }
+        nav a:hover { color: yellowgreen; }
+
+        .social-icons {
+            display: flex; align-items: center; margin-left: 15px;
+        }
+
+        .social-icons a { color: white; font-size: 20px; margin: 0 8px; }
+        .social-icons a:hover { color: yellowgreen; }
+
+        .gallery-container {
+            display: flex; justify-content: center; align-items: center; 
+            height: calc(100vh - 60px); /* Adjust height to exclude the fixed navigation bar */
+            position: relative;
+        }
+        .gallery-container img { 
+            width: 100vw; height: 100vh; object-fit: cover; 
+        }
+
+        .arrow {
+            position: absolute; top: 50%; font-size: 30px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; cursor: pointer; z-index: 10; transform: translateY(-50%);
+        }
+
+        .left-arrow { left: 10px; }
+        .right-arrow { right: 10px; }
+        .arrow:hover { color: yellowgreen; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="img/MyLogo.png" alt="Logo">
+            <span>DANIEL FREEZE</span>
+            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
+        </div>
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Visual Development.html">Visual Development</a>
+            <a href="Prop Design.html">Prop Design</a>
+            <a href="Contact.html">Contact & About</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </nav>
+
+    <div class="gallery-container">
+        <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
+        <img id="galleryImage" src="img/garbage.jpg" alt="Artwork">
+        <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
+    </div>
+
+    <script>
+        const images = ["img/cityconcept.jpg", "img/schoolbus.jpg", "img/penguinmafia.jpg", "img/garbage.jpg"];
+        let currentIndex = 3;
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            document.getElementById("galleryImage").src = images[currentIndex];
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[currentIndex];
+        }
+    </script>
+</body>
+</html>
