@@ -40,6 +40,8 @@
 
         .logo img {
             height: 40px;
+            width: auto;
+            max-width: 100%;
             margin-right: 10px;
         }
 
@@ -131,7 +133,7 @@
 <body>
     <nav>
         <div class="logo">
-            <img src="img/MyLogo.png" alt="Logo">
+            <img src="img/MyLogo.png" alt="Logo" onerror="this.src='fallback-image.png';">
             <span>DANIEL FREEZE</span>
         </div>
         <div class="nav-links">
@@ -139,7 +141,6 @@
             <a href="Visual Development.html">Visual Development</a>
             <a href="Prop Design.html">Prop Design</a>
             <a href="Contact.html">Contact & About</a>
-
         </div>
         <div class="social-icons">
             <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -147,3 +148,5 @@
             <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </nav>
+</body>
+</html>
