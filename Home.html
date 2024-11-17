@@ -87,12 +87,17 @@
 
     <div class="gallery-container">
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-        <img id="galleryImage" src="img/garbage.jpg" alt="Artwork">
+        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <script>
-        const images = ["img/cityconcept.jpg", "img/schoolbus.jpg", "img/penguinmafia.jpg", "img/garbage.jpg"];
+        const images = [
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/cityconcept.jpg", 
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/schoolbus.jpg", 
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.jpg", 
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg"
+        ];
         let currentIndex = 3;
 
         function nextImage() {
@@ -107,6 +112,7 @@
     </script>
 </body>
 </html>
+
 
 
 
