@@ -30,7 +30,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-sizing: border-box;
             z-index: 1000;
+            height: 60px;
         }
 
         .logo {
@@ -39,22 +41,34 @@
             font-weight: 600;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
         .logo img {
             height: 40px;
-            margin-right: 10px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .logo a:hover {
+            color: yellowgreen;
         }
 
         .nav-links {
             display: flex;
-            gap: 15px;
-            margin-left: auto;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: flex-end;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            margin: 0 15px;
             font-size: 16px;
             font-weight: 500;
         }
@@ -66,13 +80,12 @@
             display: flex;
             align-items: center;
             margin-left: 15px;
-            flex-shrink: 0; 
         }
 
         .social-icons a {
             color: white;
             font-size: 20px;
-            margin-left: 15px;
+            margin: 0 8px;
         }
         .social-icons a:hover {
             color: yellowgreen;
@@ -130,24 +143,24 @@
     </style>
 </head>
 <body>
-   <nav>
-    <div class="logo">
-        <!-- Updated Logo Path -->
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/MyLogo.png" alt="Logo">
-        <span>DANIEL FREEZE</span>
-    </div>
-    <div class="nav-links">
-        <a href="Home.html">Home</a>
-        <a href="Visual Development.html">Visual Development</a>
-        <a href="Prop Design.html">Prop Design</a>
-        <a href="Contact.html">Contact & About</a>
-    </div>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-</nav>
+    <nav>
+        <div class="logo">
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/MyLogo.PNG" alt="Logo">
+            <span>DANIEL FREEZE</span>
+            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
+        </div>
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Visual Development.html">Visual Development</a>
+            <a href="Prop Design.html">Prop Design</a>
+            <a href="Contact.html">Contact & About</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </nav>
 
     <div class="content">
         <div class="wrapper">
