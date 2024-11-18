@@ -96,7 +96,6 @@
             align-items: center; 
             height: calc(100vh - 120px); 
             position: relative;
-            margin-top: 250px; /* Increased gap between carousel and image gallery */
         }
 
         .gallery-container img { 
@@ -153,6 +152,7 @@
             grid-template-columns: repeat(2, 1fr); 
             gap: 40px;
             padding: 20px;
+            margin-top: 250px; /* Gap between carousel and image gallery */
         }
 
         .image-gallery img {
@@ -248,29 +248,4 @@
         const images = [
             "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg", 
             "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg"
-        ];
-        let currentIndex = 3;
-
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
-
-        function showModal(src) {
-            document.getElementById("imageModal").style.display = "flex";
-            document.getElementById("modalImage").src = src;
-        }
-
-        function closeModal() {
-            document.getElementById("imageModal").style.display = "none";
-        }
-    </script>
-</body>
-</html>
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/peng
