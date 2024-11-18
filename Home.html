@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -173,6 +173,44 @@
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
         }
+
+        /* Modal for fullscreen image */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            margin: auto;
+            display: block;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -206,30 +244,53 @@
 
     <!-- Image Gallery -->
     <div class="image-gallery">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 1">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 2">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 5">
+
+    </div>
+
+    <!-- Modal for fullscreen view -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
     </div>
 
     <script>
+        let currentImageIndex = 0;
         const images = [
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg"
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg',
         ];
-        let currentIndex = 3;
 
-        function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
+        function openModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modal.style.display = "flex";
+            modalImage.src = images[currentImageIndex];
         }
 
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = "none";
         }
+
+        // Attach event listeners to each image in the gallery
+        const galleryImages = document.querySelectorAll('.image-gallery img');
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentImageIndex = index;
+                openModal();
+            });
+        });
     </script>
 </body>
 </html>
+
