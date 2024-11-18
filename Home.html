@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Freeze - Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"> <!-- Added Lilita One font -->
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
     <style>
         body, html { 
             margin: 0; 
             padding: 0; 
             height: 100%; 
-            font-family: 'Lilita One', sans-serif; /* Changed font to Lilita One */
+            font-family: 'Lilita One', sans-serif; 
             background-color: black; 
         }
 
         nav {
-            background: black; 
+            background: rgba(0, 0, 0, 0.5); /* 50-60% transparency */
             color: white; 
-            padding: 15px; 
+            padding: 20px; 
             position: fixed; 
             width: 100%; 
             top: 0; 
@@ -27,25 +27,25 @@
             align-items: center; 
             box-sizing: border-box; 
             z-index: 1000;
-            height: 60px; 
+            height: 120px; /* Doubled height of the navbar */
         }
 
         .logo {
-            font-family: 'Lilita One', sans-serif; /* Applied Lilita One to logo */
-            font-size: 24px; /* Adjusted font size for visibility */
+            font-family: 'Lilita One', sans-serif; 
+            font-size: 32px; /* Increased logo font size */
             display: flex; 
             align-items: center;
             gap: 10px; 
         }
 
         .logo img {
-            height: 40px; 
+            height: 50px; /* Adjusted logo size */
         }
 
         .logo a {
             color: white;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 18px; /* Larger font for email */
             font-weight: 500;
         }
 
@@ -63,8 +63,8 @@
         nav a { 
             color: white; 
             text-decoration: none; 
-            margin: 0 15px; 
-            font-size: 16px; 
+            margin: 0 20px; /* Slightly larger spacing */
+            font-size: 20px; /* Larger text for better readability */
             font-weight: 500; 
         }
 
@@ -80,8 +80,8 @@
 
         .social-icons a { 
             color: white; 
-            font-size: 20px; 
-            margin: 0 8px; 
+            font-size: 24px; /* Larger icons */
+            margin: 0 12px; 
         }
 
         .social-icons a:hover { 
@@ -92,7 +92,7 @@
             display: flex; 
             justify-content: center; 
             align-items: center; 
-            height: calc(100vh - 60px); /* Adjust height to exclude the fixed navigation bar */
+            height: calc(100vh - 120px); /* Adjust height to accommodate larger navbar */
             position: relative;
         }
 
