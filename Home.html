@@ -5,17 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Freeze - Home</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet"> <!-- Added Lilita One font -->
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Roboto', sans-serif; background-color: black; }
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            font-family: 'Lilita One', sans-serif; /* Changed font to Lilita One */
+            background-color: black; 
+        }
 
         nav {
-            background: black; color: white; padding: 15px; position: fixed; width: 100%; top: 0; display: flex; justify-content: space-between; align-items: center; box-sizing: border-box; z-index: 1000;
+            background: black; 
+            color: white; 
+            padding: 15px; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-sizing: border-box; 
+            z-index: 1000;
             height: 60px; 
         }
 
         .logo {
-            font-family: 'Poppins', sans-serif; font-size: 20px; font-weight: 600; display: flex; align-items: center;
+            font-family: 'Lilita One', sans-serif; /* Applied Lilita One to logo */
+            font-size: 24px; /* Adjusted font size for visibility */
+            display: flex; 
+            align-items: center;
             gap: 10px; 
         }
 
@@ -29,40 +48,83 @@
             font-size: 14px;
             font-weight: 500;
         }
+
         .logo a:hover {
             color: yellowgreen;
         }
 
         .nav-links {
-            display: flex; align-items: center; flex-grow: 1; justify-content: flex-end;
+            display: flex; 
+            align-items: center; 
+            flex-grow: 1; 
+            justify-content: flex-end;
         }
 
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 16px; font-weight: 500; }
-        nav a:hover { color: yellowgreen; }
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 15px; 
+            font-size: 16px; 
+            font-weight: 500; 
+        }
+
+        nav a:hover { 
+            color: yellowgreen; 
+        }
 
         .social-icons {
-            display: flex; align-items: center; margin-left: 15px;
+            display: flex; 
+            align-items: center; 
+            margin-left: 15px;
         }
 
-        .social-icons a { color: white; font-size: 20px; margin: 0 8px; }
-        .social-icons a:hover { color: yellowgreen; }
+        .social-icons a { 
+            color: white; 
+            font-size: 20px; 
+            margin: 0 8px; 
+        }
+
+        .social-icons a:hover { 
+            color: yellowgreen; 
+        }
 
         .gallery-container {
-            display: flex; justify-content: center; align-items: center; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
             height: calc(100vh - 60px); /* Adjust height to exclude the fixed navigation bar */
             position: relative;
         }
+
         .gallery-container img { 
-            width: 100vw; height: 100vh; object-fit: cover; 
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover; 
         }
 
         .arrow {
-            position: absolute; top: 50%; font-size: 30px; color: white; background-color: rgba(0, 0, 0, 0.5); padding: 10px; cursor: pointer; z-index: 10; transform: translateY(-50%);
+            position: absolute; 
+            top: 50%; 
+            font-size: 30px; 
+            color: white; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            padding: 10px; 
+            cursor: pointer; 
+            z-index: 10; 
+            transform: translateY(-50%);
         }
 
-        .left-arrow { left: 10px; }
-        .right-arrow { right: 10px; }
-        .arrow:hover { color: yellowgreen; }
+        .left-arrow { 
+            left: 10px; 
+        }
+
+        .right-arrow { 
+            right: 10px; 
+        }
+
+        .arrow:hover { 
+            color: yellowgreen; 
+        }
     </style>
 </head>
 <body>
@@ -112,7 +174,3 @@
     </script>
 </body>
 </html>
-
-
-
-
