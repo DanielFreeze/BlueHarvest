@@ -27,6 +27,7 @@
             align-items: center; 
             z-index: 1000;
             height: 120px; 
+            box-sizing: border-box;
         }
 
         .logo {
@@ -74,6 +75,7 @@
             display: flex; 
             align-items: center; 
             margin-left: 15px;
+            overflow: hidden; /* Prevents icons from bleeding out of view */
         }
 
         .social-icons a { 
@@ -137,28 +139,56 @@
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); 
         }
 
-        /* New Image Gallery Styles */
+        /* Image Gallery */
         .image-gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two images per row */
+            gap: 20px;
             padding: 20px;
             margin-top: 50px;
-            background: black; 
         }
 
         .image-gallery img {
-            width: calc(25% - 15px);
-            max-width: 200px; 
+            width: 100%;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
         .image-gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Modal for larger image view */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -191,12 +221,17 @@
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <!-- New Image Gallery -->
     <div class="image-gallery">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg" alt="City Concept">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg" alt="School Bus">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG" alt="Penguin Mafia">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Garbage Concept">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg" alt="City Concept" onclick="showModal(this.src)">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg" alt="School Bus" onclick="showModal(this.src)">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG" alt="Penguin Mafia" onclick="showModal(this.src)">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Garbage Concept" onclick="showModal(this.src)">
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Larger View">
     </div>
 
     <script>
@@ -209,14 +244,4 @@
         let currentIndex = 3;
 
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
-
-        function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
-        }
-    </script>
-</body>
-</html>
+            currentIndex =
