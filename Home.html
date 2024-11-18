@@ -173,6 +173,72 @@
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
         }
+
+        /* Responsive Design for Mobile */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                text-align: center;
+            }
+
+            .logo {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            nav a {
+                font-size: 18px;
+                margin: 10px 0;
+            }
+
+            .social-icons {
+                margin-top: 10px;
+            }
+
+            .gallery-container img {
+                height: auto; /* Let images adjust to fit the screen */
+                width: 100%; 
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr; /* Stack images vertically */
+                gap: 20px; /* Adjust gap between images */
+                margin-top: 80px;
+            }
+
+            .carousel-text {
+                font-size: 30px; /* Smaller font size for mobile */
+                margin: 0 20px;
+            }
+
+            .arrow {
+                font-size: 24px; /* Smaller arrows on mobile */
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-text {
+                font-size: 24px; /* Even smaller font size for very small screens */
+            }
+
+            .image-gallery {
+                gap: 10px; /* Reduce gap for very small screens */
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -200,35 +266,34 @@
             <span>VisDev - Prop Design - Illustration</span>
         </div>
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
+        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt1.jpg" alt="Gallery Image">
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <!-- Image Gallery -->
     <div class="image-gallery">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg" alt="Image 1">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg" alt="Image 2">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG" alt="Image 3">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Image 4">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt2.jpg" alt="Concept Art Image 1">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt3.jpg" alt="Concept Art Image 2">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt4.jpg" alt="Concept Art Image 3">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt5.jpg" alt="Concept Art Image 4">
     </div>
 
     <script>
-        const images = [
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/CityConcept.jpg", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/SchoolBus.jpg", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG", 
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg"
+        let images = [
+            'https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt1.jpg',
+            'https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt2.jpg',
+            'https://raw.githubusercontent.com/DanielFreeze/Portfolio-v2/main/Images/ConceptArt3.jpg'
         ];
-        let currentIndex = 3;
+
+        let currentImageIndex = 0;
 
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
         }
 
         function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentIndex];
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
         }
     </script>
 </body>
