@@ -129,13 +129,14 @@
 
         .carousel-text {
             position: absolute; 
-            top: 50%; /* Center the text vertically over the image */
+            top: 60%; /* Lowered by about an inch */
             left: 50%; /* Center the text horizontally */
             transform: translate(-50%, -50%); /* Perfect centering */
             width: 100%; 
             text-align: center; 
             color: white; 
-            font-size: 40px; /* Smaller font size */
+            font-size: 28px; /* Smaller font size */
+            font-family: 'Lilita One', sans-serif; /* Font is Lilita One */
             font-weight: 600; 
             opacity: 0.8; /* 80% opacity */
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Adds shadow for contrast */
@@ -169,9 +170,7 @@
 
     <div class="gallery-container">
         <div class="carousel-text">
-            <span>VisDev</span>
-            <span>Prop Design</span>
-            <span>Illustration</span>
+            <span>VisDev - Prop Design - Illustration</span>
         </div>
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
         <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
