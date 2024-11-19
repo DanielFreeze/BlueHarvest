@@ -256,49 +256,45 @@
 
     <script>
         let currentImageIndex = 0;
-        const images = [
-            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg',
-            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg',
- 			'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg',
- 			'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg',
-       	    'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
- 			'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg',
-        ];
+        const carouselImages = [
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
+    ];
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            updateCarouselImage();
-        }
+    // Carousel navigation
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
+    }
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            updateCarouselImage();
-        }
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+        document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
+    }
 
-        function updateCarouselImage() {
-            const galleryImage = document.getElementById('galleryImage');
-            galleryImage.src = images[currentImageIndex];
-        }
+    // Modal functionality for the gallery
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
 
-        function openModal() {
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
+    document.querySelectorAll('.image-gallery img').forEach((img) => {
+        img.addEventListener('click', function () {
             modal.style.display = "flex";
-            modalImage.src = images[currentImageIndex];
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.style.display = "none";
-        }
-
-        const galleryImages = document.querySelectorAll('.image-gallery img');
-        galleryImages.forEach((img, index) => {
-            img.addEventListener('click', () => {
-                currentImageIndex = index;
-                openModal();
-            });
+            modalImg.src = this.src;
         });
-    </script>
-</body>
-</html>
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+</script>
+
+
