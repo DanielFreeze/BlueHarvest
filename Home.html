@@ -12,7 +12,7 @@
             padding: 0; 
             height: 100%; 
             font-family: 'Roboto', sans-serif; 
-            background-color: white; /* Changed to white */
+            background-color: white; 
         }
 
         nav {
@@ -146,22 +146,21 @@
             margin: 0 50px; 
         }
 
-        /* Image Gallery */
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two equal columns */
-            grid-template-rows: repeat(2, 1fr); /* Two equal rows */
-            gap: 40px; /* Even gap between the images */
+            grid-template-columns: repeat(2, 1fr); 
+            grid-template-rows: repeat(2, 1fr); 
+            gap: 40px; 
             padding: 20px;
-            margin-top: 125px; /* Reduced gap between carousel and image gallery */
-            justify-items: center; /* Center horizontally */
-            align-items: center; /* Center vertically */
+            margin-top: 125px; 
+            justify-items: center; 
+            align-items: center; 
         }
 
         .image-gallery img {
-            width: 100%; /* Let the image fill the grid cell, keeping aspect ratio */
+            width: 100%; 
             height: auto;
-            max-width: 90%; /* Limit max width so images are centered and proportionate */
+            max-width: 90%; 
             margin: 0;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -174,16 +173,15 @@
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
         }
 
-        /* Modal for fullscreen image */
         .modal {
-            display: none; /* Hidden by default */
+            display: none; 
             position: fixed;
             z-index: 1000;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            background-color: rgba(0, 0, 0, 0.8); 
             justify-content: center;
             align-items: center;
         }
@@ -238,22 +236,19 @@
             <span>VisDev - Prop Design - Illustration</span>
         </div>
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
+        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Artwork">
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
-    <!-- Image Gallery -->
     <div class="image-gallery">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 5">
-
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 6">
     </div>
 
-    <!-- Modal for fullscreen view -->
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
@@ -270,6 +265,21 @@
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg',
         ];
 
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateCarouselImage();
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateCarouselImage();
+        }
+
+        function updateCarouselImage() {
+            const galleryImage = document.getElementById('galleryImage');
+            galleryImage.src = images[currentImageIndex];
+        }
+
         function openModal() {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
@@ -282,7 +292,6 @@
             modal.style.display = "none";
         }
 
-        // Attach event listeners to each image in the gallery
         const galleryImages = document.querySelectorAll('.image-gallery img');
         galleryImages.forEach((img, index) => {
             img.addEventListener('click', () => {
@@ -293,4 +302,3 @@
     </script>
 </body>
 </html>
-
