@@ -15,13 +15,14 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: white;
+            background-color: black; /* Set background to black */
+            color: white; /* Set text color to white */
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
         nav {
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7); /* Darkened navigation bar */
             color: white;
             padding: 20px;
             position: fixed;
@@ -100,32 +101,44 @@
 
         .wide-image img {
             width: auto;
-            height: 400px; /* Adjusted image height */
-            max-width: 80%; /* Reduced width to prevent stretching */
+            height: 400px;
+            max-width: 80%;
             display: block;
-            margin: 0 auto; /* Centered image */
-            margin-top: 120px; /* Aligns the image to the bottom of the navigation bar */
+            margin: 0 auto;
+            margin-top: 120px;
         }
 
         .section {
             scroll-margin-top: 80px;
         }
 
-        .contact-links a {
-            font-family: 'Roboto', sans-serif;
-            color: black;
+        .contact-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-buttons a {
             text-decoration: none;
-            font-size: 18px;
         }
 
-        .contact-links a:hover {
-            color: yellowgreen;
+        .contact-buttons button {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            padding: 15px 30px;
+            background-color: yellowgreen; /* Green color for buttons */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        .contact-links {
-            margin-top: 20px;
-            text-align: center;
+        .contact-buttons button:hover {
+            background-color: #45a049; /* Darker green on hover */
         }
+
     </style>
 </head>
 <body>
@@ -154,12 +167,15 @@
             <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/ContactImage.jpg" alt="Contact Image">
         </div>
 
-        <!-- Contact Links -->
-        <div class="contact-links">
-            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a><br><br>
-            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank">LinkedIn</a>
+        <!-- Contact Buttons -->
+        <div class="contact-buttons">
+            <a href="mailto:danielthefreeze@gmail.com">
+                <button>Email Me!</button>
+            </a>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank">
+                <button>LinkedIn</button>
+            </a>
         </div>
     </div>
 </body>
 </html>
-
