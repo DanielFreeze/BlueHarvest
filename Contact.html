@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Freeze - About & Contact</title>
+    <title>Daniel Freeze - VisDev</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&family=Lilita+One&display=swap" rel="stylesheet"> <!-- Added Lolita One -->
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
             font-family: 'Roboto', sans-serif;
-            background-color: black; 
-            color: white; 
+            background-color: white;
+            scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
         nav {
-            background: black; 
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            padding: 15px 20px;
+            padding: 20px;
             position: fixed;
             width: 100%;
             top: 0;
@@ -29,35 +32,45 @@
             align-items: center;
             box-sizing: border-box;
             z-index: 1000;
+            height: 120px;
         }
 
         .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 20px;
-            font-weight: 600;
+            font-family: 'Lilita One', sans-serif;
+            font-size: 32px;
             display: flex;
             align-items: center;
+            gap: 10px;
         }
 
         .logo img {
-            height: 40px;
-            width: auto;
-            max-width: 100%;
-            margin-right: 10px;
+            height: 50px;
+        }
+
+        .logo a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .logo a:hover {
+            color: yellowgreen;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
             flex-grow: 1;
+            justify-content: flex-end;
         }
 
         nav a {
-            color: white; 
+            color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-size: 16px;
+            margin: 0 20px;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif;
             font-weight: 500;
         }
 
@@ -68,12 +81,13 @@
         .social-icons {
             display: flex;
             align-items: center;
+            margin-left: 15px;
         }
 
         .social-icons a {
-            color: white; 
-            font-size: 20px;
-            margin: 0 8px;
+            color: white;
+            font-size: 24px;
+            margin: 0 12px;
         }
 
         .social-icons a:hover {
@@ -81,90 +95,45 @@
         }
 
         .content {
-            padding-top: 80px; 
-            padding-bottom: 40px; 
+            padding-top: 160px; /* Increased padding-top */
             text-align: center;
-            padding-left: 20px;
-            padding-right: 20px;
         }
 
-        h1 {
-            font-size: 3em;
-            margin: 20px 0;
-            color: white; 
-        }
-
-        h3 {
-            font-size: 1.8em;
-            margin: 10px 0;
-            font-weight: 500;
-            color: white;
-        }
-
-        #biotext {
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.2em;
-            line-height: 1.6;
+        .section-title {
+            font-family: 'Lilita One', cursive;
+            font-size: 48px;
+            font-weight: 600;
+            margin: 20px 0 10px;
             text-align: left;
-            padding: 20px;
-            color: white; 
+            padding-left: 20px;
         }
 
-        #about-section img, #contact-section img {
-            width: 100%;
-            max-width: 934px;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 5px;
-        }
-
-        #contact-section img {
-            margin-top: 0; 
-        }
-
-        button {
-            background-color: yellowgreen; 
-            color: black; 
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px; 
-        }
-
-        button:hover {
-            background-color: white;
-            color: black;
-        }
-
-        #contact-section {
-            margin-top: 0; 
-            text-align: center;
-        }
-
-        .email-link {
-            color: yellowgreen; 
+        .section-subtitle {
+            font-family: 'Roboto', sans-serif;
             font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
+            font-weight: 500;
+            color: darkgray;
+            margin-bottom: 20px;
+            text-align: left;
+            padding-left: 20px;
         }
 
-        .email-link:hover {
-            color: white; 
+        .wide-image img {
+            width: 100%;
+            display: block;
+            max-width: 100%;
         }
 
-        .linkedin-btn {
-            display: block; 
-            margin: 10px auto; 
+        .section {
+            scroll-margin-top: 80px;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation bar from the first page -->
     <nav>
         <div class="logo">
-            <img src="img/MyLogo.png" alt="Logo" onerror="this.src='fallback-image.png';">
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/MyLogo.PNG" alt="Logo">
             <span>DANIEL FREEZE</span>
             <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
         </div>
@@ -181,22 +150,36 @@
         </div>
     </nav>
 
-    <div id="contact-section" class="content">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/ContactImage.jpg" alt="Contact Image">
-        <h3>I'd love to hear from you!</h3>
-        <a href="mailto:danielthefreeze@gmail.com" class="email-link">danielthefreeze@gmail.com</a>
-        
-        <a href="https://www.linkedin.com/in/danielfreeze/" target="_blank" class="linkedin-btn">
-            <button>LinkedIn</button>
-        </a>
-    </div>
+    <div class="content">
+        <div id="garbage-section" class="wide-image section">
+            <div class="section-title">GARBAGE TRUCK</div>
+            <div class="section-subtitle">Selection of visual development for "Raccoons VS Trash Truck"</div>
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/TruckBreakdown.jpg" alt="Truck Breakdown">
+        </div>
 
-    <div id="about-section" class="content">
-        <h3>ABOUT</h3>
-        <p id="biotext">
-            I am an Animation Major at Sam Houston State University, specializing in concept art and visual development.
-            I am proficient in Procreate and Adobe Photoshop within my personal, academic, and professional career.
-        </p>
+        <div id="indiana-section" class="wide-image section">
+            <div class="section-title">INDIANA JONES</div>
+            <div class="section-subtitle">Selection of visual development for "Indiana Jones the Animated Series."</div>
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/Indiana.jpg" alt="Indiana">
+        </div>
+
+        <div id="city-section" class="wide-image section">
+            <div class="section-title">DFW MASHUP</div>
+            <div class="section-subtitle">Mashup between Dallas and Fort Worth skylines, alternates included.</div>
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/citybreakdown.jpg" alt="City Breakdown">
+        </div>
+
+        <div id="penguin-section" class="wide-image section">
+            <div class="section-title">PENGUIN MAFIA</div>
+            <div class="section-subtitle">Selection of visual development for "Penguin Mafia."</div>
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/themafia.jpg" alt="Penguin Mafia">
+        </div>
+
+        <div id="city2-section" class="wide-image section">
+            <div class="section-title">SCHOOL BUS</div>
+            <div class="section-subtitle">Selection of visual development for "Back 2 School."</div>
+            <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/widebus.jpg" alt="School Bus">
+        </div>
     </div>
 </body>
 </html>
