@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daniel Freeze - VisDev</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&family=Lilita+One&display=swap" rel="stylesheet"> <!-- Added Lolita One -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@500&family=Lilita+One&display=swap" rel="stylesheet">
     <style>
         * {
             box-sizing: border-box;
@@ -95,37 +95,36 @@
         }
 
         .content {
-            padding-top: 160px; /* Increased padding-top */
             text-align: center;
         }
 
-        .section-title {
-            font-family: 'Lilita One', cursive;
-            font-size: 48px;
-            font-weight: 600;
-            margin: 20px 0 10px;
-            text-align: left;
-            padding-left: 20px;
-        }
-
-        .section-subtitle {
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            color: darkgray;
-            margin-bottom: 20px;
-            text-align: left;
-            padding-left: 20px;
-        }
-
         .wide-image img {
-            width: 100%;
+            width: auto;
+            height: 400px; /* Adjusted image height */
+            max-width: 80%; /* Reduced width to prevent stretching */
             display: block;
-            max-width: 100%;
+            margin: 0 auto; /* Centered image */
+            margin-top: 120px; /* Aligns the image to the bottom of the navigation bar */
         }
 
         .section {
             scroll-margin-top: 80px;
+        }
+
+        .contact-links a {
+            font-family: 'Roboto', sans-serif;
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .contact-links a:hover {
+            color: yellowgreen;
+        }
+
+        .contact-links {
+            margin-top: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -140,7 +139,7 @@
         <div class="nav-links">
             <a href="Home.html">Home</a>
             <a href="Visual Development.html">Visual Development</a>
-            <a href="Prop Design.html">Prop Design</a>qd
+            <a href="Prop Design.html">Prop Design</a>
             <a href="Contact.html">Contact & About</a>
         </div>
         <div class="social-icons">
@@ -153,9 +152,14 @@
     <div class="content">
         <div id="garbage-section" class="wide-image section">
             <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/ContactImage.jpg" alt="Contact Image">
-        
-       
+        </div>
+
+        <!-- Contact Links -->
+        <div class="contact-links">
+            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a><br><br>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank">LinkedIn</a>
         </div>
     </div>
 </body>
 </html>
+
