@@ -263,7 +263,7 @@
         'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
     ];
 
-    // Carousel navigation
+    
     function nextImage() {
         currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
         document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
@@ -274,7 +274,7 @@
         document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
     }
 
-    // Modal functionality for the gallery
+    
     const modal = document.getElementById("imageModal");
     const modalImg = document.getElementById("modalImage");
 
@@ -289,12 +289,11 @@
         modal.style.display = "none";
     }
 
-    // Close modal when clicking outside the image
+   
     modal.addEventListener('click', function (event) {
         if (event.target === modal) {
             closeModal();
         }
     });
 </script>
-
 
