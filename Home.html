@@ -13,6 +13,7 @@
             height: 100%; 
             font-family: 'Roboto', sans-serif; 
             background-color: white; 
+            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         nav {
@@ -153,11 +154,13 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden; /* Prevent content from overflowing */
+            width: 100%;
         }
 
         .gallery-container img { 
             width: 100vw; 
-            height: 100vh; 
+            height: auto; 
             object-fit: cover; 
         }
 
@@ -209,6 +212,7 @@
             margin-top: 125px;
             justify-items: center;
             align-items: center;
+            width: 100%;
         }
 
         .image-gallery img {
@@ -238,7 +242,6 @@
         <div class="logo">
             <img src="img/MyLogo.PNG" alt="Logo">
             <span>DANIEL FREEZE</span>
-            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
         </div>
         <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
         <div class="nav-menu">
@@ -247,6 +250,7 @@
                 <a href="Visual Development.html">Visual Development</a>
                 <a href="Prop Design.html">Prop Design</a>
                 <a href="Contact.html">Contact & About</a>
+                <a href="mailto:danielthefreeze@gmail.com"> danielthefreeze@gmail.com</a> 
             </div>
             <div class="social-icons">
                 <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -272,17 +276,15 @@
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 6">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1268.jpeg" alt="Image 6">
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggleButton = document.querySelector(".navbar-toggle");
-            const navMenu = document.querySelector(".nav-menu");
+        const toggleButton = document.querySelector(".navbar-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
-            toggleButton.addEventListener("click", () => {
-                navMenu.classList.toggle("active");
-            });
+        toggleButton.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
         });
 
         const carouselImages = [
@@ -291,6 +293,7 @@
             "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg",
             "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg"
         ];
+
         let currentImageIndex = 0;
 
         // Disable carousel functionality on mobile
