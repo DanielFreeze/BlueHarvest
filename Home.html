@@ -19,7 +19,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7); /* Opacity applied here */
             color: white;
             padding: 20px;
             position: fixed;
@@ -59,16 +59,28 @@
             display: flex;
             justify-content: flex-end;
             align-items: center;
+            background: rgba(0, 0, 0, 0.7); /* Same opacity as the nav bar */
+            width: 100%;
+            height: 0; /* Start collapsed */
+            overflow: hidden;
+            transition: height 0.5s ease; /* Smoothly animate the height */
+        }
+
+        .nav-menu.active {
+            height: 200px; /* Set to desired height when active */
         }
 
         .nav-links {
             display: flex;
+            flex-direction: column; /* Stack links vertically when menu is active */
+            width: 100%;
+            padding: 20px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 10px 0;
             font-size: 20px;
             font-weight: 500;
         }
@@ -108,18 +120,13 @@
             }
 
             .nav-menu {
-                display: none;
+                display: flex;
                 flex-direction: column;
-                background: rgba(0, 0, 0, 0.9);
+                background: rgba(0, 0, 0, 0.9); /* Slightly darker for visibility */
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                padding: 10px 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
             }
 
             .nav-links {
@@ -260,7 +267,7 @@
     </div>
 
     <div class="image-gallery">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
+           <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
@@ -269,31 +276,29 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const toggleButton = document.querySelector(".navbar-toggle");
-            const navMenu = document.querySelector(".nav-menu");
+        const toggleButton = document.querySelector(".navbar-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
-            toggleButton.addEventListener("click", () => {
-                navMenu.classList.toggle("active");
-            });
+        toggleButton.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
         });
 
-        let currentImageIndex = 0;
-        const carouselImages = [
+        const images = [
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
-        
         ];
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
-            document.getElementById('galleryImage').src = carouselImages[currentImageIndex];
-        }
+        let currentImageIndex = 0;
 
         function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-            document.getElementById('galleryImage').src = carouselImages[currentImageIndex];
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
         }
     </script>
 </body>
