@@ -13,7 +13,6 @@
             height: 100%; 
             font-family: 'Roboto', sans-serif; 
             background-color: white; 
-            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         nav {
@@ -136,17 +135,6 @@
                 justify-content: center;
                 margin-top: 10px;
             }
-
-            /* Hide carousel arrows on mobile */
-            .arrow {
-                display: none;
-            }
-
-            /* Set the image to take full width of the screen on mobile */
-            .carousel-container img {
-                width: 100%;
-                height: auto;
-            }
         }
 
         .gallery-container {
@@ -154,13 +142,11 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden; /* Prevent content from overflowing */
-            width: 100%;
         }
 
         .gallery-container img { 
             width: 100vw; 
-            height: auto; 
+            height: 100vh; 
             object-fit: cover; 
         }
 
@@ -206,18 +192,17 @@
 
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Default: two images per row */
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px; 
             padding: 20px;
-            margin-top: 125px;
-            justify-items: center;
-            align-items: center;
-            width: 100%;
+            margin-top: 125px; 
+            justify-items: center; 
+            align-items: center; 
         }
 
         .image-gallery img {
-            width: 100%;
-            max-width: 90%;
+            width: 100%; 
+            max-width: 90%; 
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -228,13 +213,6 @@
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
         }
-
-        /* Responsive Design for Mobile */
-        @media (max-width: 768px) {
-            .image-gallery {
-                grid-template-columns: 1fr; /* Single column layout for mobile */
-            }
-        }
     </style>
 </head>
 <body>
@@ -242,6 +220,7 @@
         <div class="logo">
             <img src="img/MyLogo.PNG" alt="Logo">
             <span>DANIEL FREEZE</span>
+            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
         </div>
         <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
         <div class="nav-menu">
@@ -250,7 +229,6 @@
                 <a href="Visual Development.html">Visual Development</a>
                 <a href="Prop Design.html">Prop Design</a>
                 <a href="Contact.html">Contact & About</a>
-                <a href="mailto:danielthefreeze@gmail.com"> danielthefreeze@gmail.com</a> 
             </div>
             <div class="social-icons">
                 <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -264,7 +242,6 @@
         <div class="carousel-text">
             <span>VisDev - Prop Design - Illustration</span>
         </div>
-        <!-- Show carousel arrows only on larger screens -->
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
         <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
@@ -275,38 +252,34 @@
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1268.jpeg" alt="Image 6">
+		<img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 6">
     </div>
 
     <script>
-        const toggleButton = document.querySelector(".navbar-toggle");
-        const navMenu = document.querySelector(".nav-menu");
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleButton = document.querySelector(".navbar-toggle");
+            const navMenu = document.querySelector(".nav-menu");
 
-        toggleButton.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+            toggleButton.addEventListener("click", () => {
+                navMenu.classList.toggle("active");
+            });
         });
 
+        let currentImageIndex = 0;
         const carouselImages = [
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg",
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg",
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg",
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg"
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
+            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
         ];
 
-        let currentImageIndex = 0;
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+            document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
+        }
 
-        // Disable carousel functionality on mobile
-        if (window.innerWidth >= 768) {
-            function nextImage() {
-                currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
-                document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
-            }
-
-            function prevImage() {
-                currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
-                document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
-            }
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+            document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
         }
     </script>
 </body>
