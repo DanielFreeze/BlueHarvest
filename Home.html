@@ -16,38 +16,36 @@
         }
 
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.7); /* Opacity applied here */
-            color: white;
-            padding: 20px;
-            position: fixed;
-            width: 100%;
-            top: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white; 
+            padding: 20px; 
+            position: fixed; 
+            width: 100%; 
+            top: 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-sizing: border-box; 
             z-index: 1000;
-            box-sizing: border-box;
+            height: 120px; 
         }
 
         .logo {
-            display: flex;
+            font-family: 'Lilita One', sans-serif; 
+            font-size: 32px; 
+            display: flex; 
             align-items: center;
-            gap: 10px;
+            gap: 10px; 
         }
 
         .logo img {
-            height: 50px;
-        }
-
-        .logo span {
-            font-family: 'Lilita One', sans-serif;
-            font-size: 32px;
+            height: 50px; 
         }
 
         .logo a {
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 18px; 
             font-weight: 500;
         }
 
@@ -55,111 +53,53 @@
             color: yellowgreen;
         }
 
-        .nav-menu {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.7); /* Same opacity as the nav bar */
-            width: 100%;
-        }
-
         .nav-links {
-            display: flex;
+            display: flex; 
+            align-items: center; 
+            flex-grow: 1; 
+            justify-content: flex-end;
         }
 
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 20px;
-            font-weight: 500;
+        nav a { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 20px; 
+            font-size: 20px; 
+            font-family: 'Roboto', sans-serif;
+            font-weight: 500; 
         }
 
-        .nav-links a:hover {
-            color: yellowgreen;
+        nav a:hover { 
+            color: yellowgreen; 
         }
 
         .social-icons {
-            display: flex;
+            display: flex; 
+            align-items: center; 
             margin-left: 15px;
         }
 
-        .social-icons a {
-            color: white;
-            font-size: 24px;
-            margin: 0 12px;
+        .social-icons a { 
+            color: white; 
+            font-size: 24px; 
+            margin: 0 12px; 
         }
 
-        .social-icons a:hover {
-            color: yellowgreen;
+        .social-icons a:hover { 
+            color: yellowgreen; 
         }
 
-        .navbar-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .navbar-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.9); /* Slightly darker for visibility */
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                padding: 10px 0;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links a {
-                margin: 10px 0;
-            }
-
-            .social-icons {
-                justify-content: center;
-                margin-top: 10px;
-            }
-        }
-
-        /* Carousel & Gallery Styling */
         .gallery-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
             position: relative;
-            width: 100%;
-            height: 100vh; /* Take up full viewport height */
         }
 
-        .carousel-container {
-            width: 100%;
-            height: 100%;
-        }
-
-        .carousel-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Makes the image fill the container and touch the sides */
-            max-width: 100%;
-            max-height: 100%;
+        .gallery-container img { 
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover; 
         }
 
         .arrow {
@@ -202,10 +142,14 @@
             white-space: nowrap; 
         }
 
-        /* Image Gallery */
+        .carousel-text span {
+            margin: 0 50px; 
+        }
+
         .image-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr); 
+            grid-template-rows: repeat(2, 1fr); 
             gap: 40px; 
             padding: 20px;
             margin-top: 125px; 
@@ -215,7 +159,9 @@
 
         .image-gallery img {
             width: 100%; 
+            height: auto;
             max-width: 90%; 
+            margin: 0;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -226,6 +172,43 @@
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
         }
+
+        .modal {
+            display: none; 
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            margin: auto;
+            display: block;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -233,20 +216,18 @@
         <div class="logo">
             <img src="img/MyLogo.PNG" alt="Logo">
             <span>DANIEL FREEZE</span>
+            <a href="mailto:danielthefreeze@gmail.com">danielthefreeze@gmail.com</a>
         </div>
-        <button class="navbar-toggle" aria-label="Toggle navigation">☰</button>
-        <div class="nav-menu">
-            <div class="nav-links">
-                <a href="Home.html">Home</a>
-                <a href="Visual Development.html">Visual Development</a>
-                <a href="Prop Design.html">Prop Design</a>
-                <a href="Contact.html">Contact & About</a>
-            </div>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="Visual Development.html">Visual Development</a>
+            <a href="Prop Design.html">Prop Design</a>
+            <a href="Contact.html">Contact & About</a>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/danieljfreeze" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/danielfreeze" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
     </nav>
 
@@ -255,9 +236,7 @@
             <span>VisDev - Prop Design - Illustration</span>
         </div>
         <button class="arrow left-arrow" onclick="prevImage()"><i class="fas fa-chevron-left"></i></button>
-        <div class="carousel-container">
-            <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
-        </div>
+        <img id="galleryImage" src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg" alt="Artwork">
         <button class="arrow right-arrow" onclick="nextImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
@@ -270,31 +249,50 @@
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 6">
     </div>
 
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
     <script>
-        const toggleButton = document.querySelector(".navbar-toggle");
-        const navMenu = document.querySelector(".nav-menu");
-
-        toggleButton.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-
-        const images = [
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg",
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg",
-            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg"
-        ];
-
         let currentImageIndex = 0;
+        const carouselImages = [
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG',
+        'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
+    ];
 
-        function nextImage() {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            document.getElementById("galleryImage").src = images[currentImageIndex];
-        }
+    
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+        document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
+    }
 
-        function prevImage() {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            document.getElementById("galleryImage").src = images[currentImageIndex];
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + carouselImages.length) % carouselImages.length;
+        document.getElementById("galleryImage").src = carouselImages[currentImageIndex];
+    }
+
+    
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+
+    document.querySelectorAll('.image-gallery img').forEach((img) => {
+        img.addEventListener('click', function () {
+            modal.style.display = "flex";
+            modalImg.src = this.src;
+        });
+    });
+
+    function closeModal() {
+        modal.style.display = "none";
+    }
+
+   
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            closeModal();
         }
-    </script>
-</body>
-</html>
+    });
+</script>
