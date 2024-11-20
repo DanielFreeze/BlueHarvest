@@ -192,17 +192,17 @@
 
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Default: two images per row */
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px; 
             padding: 20px;
-            margin-top: 125px;
-            justify-items: center;
-            align-items: center;
+            margin-top: 125px; 
+            justify-items: center; 
+            align-items: center; 
         }
 
         .image-gallery img {
-            width: 100%;
-            max-width: 90%;
+            width: 100%; 
+            max-width: 90%; 
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -212,13 +212,6 @@
         .image-gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Responsive Design for Mobile */
-        @media (max-width: 768px) {
-            .image-gallery {
-                grid-template-columns: 1fr; /* Single column layout for mobile */
-            }
         }
     </style>
 </head>
@@ -259,7 +252,7 @@
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
-        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
+		<img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg" alt="Image 5">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1277.jpeg" alt="Image 6">
     </div>
 
@@ -277,8 +270,6 @@
         const carouselImages = [
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
             'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
-			'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/penguinmafia.JPG',
-       		 'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
         ];
 
         function nextImage() {
