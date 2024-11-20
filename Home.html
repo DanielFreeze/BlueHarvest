@@ -61,26 +61,16 @@
             align-items: center;
             background: rgba(0, 0, 0, 0.7); /* Same opacity as the nav bar */
             width: 100%;
-            height: 0; /* Start collapsed */
-            overflow: hidden;
-            transition: height 0.5s ease; /* Smoothly animate the height */
-        }
-
-        .nav-menu.active {
-            height: 200px; /* Set to desired height when active */
         }
 
         .nav-links {
             display: flex;
-            flex-direction: column; /* Stack links vertically when menu is active */
-            width: 100%;
-            padding: 20px;
         }
 
         .nav-links a {
             color: white;
             text-decoration: none;
-            margin: 10px 0;
+            margin: 0 20px;
             font-size: 20px;
             font-weight: 500;
         }
@@ -120,13 +110,18 @@
             }
 
             .nav-menu {
-                display: flex;
+                display: none;
                 flex-direction: column;
                 background: rgba(0, 0, 0, 0.9); /* Slightly darker for visibility */
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
+                padding: 10px 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
             }
 
             .nav-links {
@@ -141,25 +136,6 @@
             .social-icons {
                 justify-content: center;
                 margin-top: 10px;
-            }
-
-            /* Adjust image gallery for mobile */
-            .image-gallery {
-                display: grid;
-                grid-template-columns: 1fr; /* Single column on mobile */
-                gap: 20px; 
-                padding: 20px;
-                justify-items: center;
-                margin-top: 125px;
-            }
-
-            .image-gallery img {
-                width: 100%; 
-                max-width: 100%; 
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-                cursor: pointer;
             }
         }
 
@@ -226,6 +202,30 @@
             white-space: nowrap; 
         }
 
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 40px; 
+            padding: 20px;
+            margin-top: 125px; 
+            justify-items: center; 
+            align-items: center; 
+        }
+
+        .image-gallery img {
+            width: 100%; 
+            max-width: 90%; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .image-gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
 <body>
@@ -262,7 +262,7 @@
     </div>
 
     <div class="image-gallery">
-           <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
+        <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg" alt="Image 1">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1276.jpeg" alt="Image 2">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg" alt="Image 3">
         <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1279.jpeg" alt="Image 4">
@@ -271,28 +271,29 @@
     </div>
 
     <script>
-        const toggleButton = document.querySelector('.navbar-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        const toggleButton = document.querySelector(".navbar-toggle");
+        const navMenu = document.querySelector(".nav-menu");
 
-        toggleButton.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+        toggleButton.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
         });
 
-        let currentIndex = 0;
         const images = [
-            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg',
-            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/back2school.jpg',
-            'https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IndianaJones.jpg',
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/garbage.jpg",
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1280.jpeg",
+            "https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/IMG_1281.jpeg"
         ];
 
+        let currentImageIndex = 0;
+
         function nextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            document.getElementById('galleryImage').src = images[currentIndex];
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
         }
 
         function prevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            document.getElementById('galleryImage').src = images[currentIndex];
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            document.getElementById("galleryImage").src = images[currentImageIndex];
         }
     </script>
 </body>
