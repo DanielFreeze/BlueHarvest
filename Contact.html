@@ -15,14 +15,14 @@
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: black; /* Set background to black */
-            color: white; /* Set text color to white */
+            background-color: black; 
+            color: white; 
             scroll-behavior: smooth;
             overflow-x: hidden;
         }
 
         nav {
-            background: rgba(0, 0, 0, 0.7); /* Darkened navigation bar */
+            background: rgba(0, 0, 0, 0.7); 
             color: white;
             padding: 20px;
             position: fixed;
@@ -97,6 +97,7 @@
 
         .content {
             text-align: center;
+            padding-top: 140px; 
         }
 
         .wide-image img {
@@ -105,11 +106,6 @@
             max-width: 80%;
             display: block;
             margin: 0 auto;
-            margin-top: 120px;
-        }
-
-        .section {
-            scroll-margin-top: 80px;
         }
 
         .contact-buttons {
@@ -127,7 +123,7 @@
             font-family: 'Roboto', sans-serif;
             font-size: 20px;
             padding: 15px 30px;
-            background-color: #FF5349; /* Green color for buttons */
+            background-color: #FF5349; 
             color: white;
             border: none;
             border-radius: 5px;
@@ -136,13 +132,34 @@
         }
 
         .contact-buttons button:hover {
-            background-color: red; /* Darker green on hover */
+            background-color: red; 
+        }
+
+        #about-section {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            max-width: 800px; 
+            margin-left: auto; 
+            margin-right: auto; 
+        }
+
+        #biotext h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #biotext p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left; 
+            text-indent: 30px;
         }
 
     </style>
 </head>
 <body>
-    <!-- Navigation bar from the first page -->
     <nav>
         <div class="logo">
             <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/MyLogo.PNG" alt="Logo">
@@ -166,8 +183,6 @@
         <div id="garbage-section" class="wide-image section">
             <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/ContactImage.jpg" alt="Contact Image">
         </div>
-
-        <!-- Contact Buttons -->
         <div class="contact-buttons">
             <a href="mailto:danielthefreeze@gmail.com">
                 <button>Email Me!</button>
@@ -175,6 +190,14 @@
             <a href="https://www.linkedin.com/in/danielfreeze" target="_blank">
                 <button>LinkedIn</button>
             </a>
+        </div>
+
+        <div id="about-section">
+            <h3>ABOUT</h3>
+            <div id="biotext">
+                <h3>Daniel Freeze</h3>
+                <p>I am an Animation Major at Sam Houston State University, having transferred from North Central Texas College. My diverse interests include traditional ensemble music, stemming from eight years of experience in a band program, as well as film, emerging technology, and animation. Within the animation industry, my primary focus lies in visual development, prop design, and background painting. I am passionate about expanding my artistic expertise and approach new projects with enthusiasm and dedication.</p>
+            </div>
         </div>
     </div>
 </body>
