@@ -97,38 +97,49 @@
 
         .content {
             text-align: center;
-            padding-top: 140px; 
+            margin-top: 140px; /* Add at least 1 inch of space below the nav bar */
+            padding-top: 20px;
         }
 
-        .wide-image img {
-            width: auto;
-            height: 400px;
-            max-width: 80%;
-            display: block;
-            margin: 0 auto;
-      
         #about-section {
-            margin-top: 50px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             padding: 20px;
             background-color: #1a1a1a;
             border-radius: 8px;
             max-width: 800px; 
-            margin-left: auto; 
-            margin-right: auto; 
+            margin: 0 auto;
         }
 
-        #biotext h3 {
+        .bio-image {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .bio-image img {
+            width: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .bio-text {
+            flex: 2;
+            text-align: left;
+        }
+
+        .bio-text h3 {
             font-size: 24px;
             margin-bottom: 10px;
         }
 
-        #biotext p {
+        .bio-text p {
             font-size: 18px;
             line-height: 1.6;
-            text-align: left; 
             text-indent: 30px;
         }
-
     </style>
 </head>
 <body>
@@ -141,8 +152,8 @@
         <div class="nav-links">
             <a href="Home.html">Home</a>
             <a href="Visual Development.html">Visual Development</a>
-            <a href="Prop Design.html">Contact</a>
-            <a href="Contact.html">About</a>
+            <a href="Contact.html">Contact</a>
+            <a href="About.html">About</a>
         </div>
         <div class="social-icons">
             <a href="https://www.instagram.com/danieljfreeze1/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -151,11 +162,13 @@
         </div>
     </nav>
 
-
+    <div class="content">
         <div id="about-section">
-            <h3>ABOUT</h3>
-            <div id="biotext">
-                <h3>Daniel Freeze</h3>
+            <div class="bio-image">
+                <img src="https://raw.githubusercontent.com/DanielFreeze/BlueHarvest/main/img/danielfreeze.jpg" alt="Daniel Freeze">
+            </div>
+            <div class="bio-text">
+                                 <h3>Daniel Freeze</h3>
                 <p>Originally from Denton, Texas, I am an Animation Major at Sam Houston State University, having transferred from North Central Texas College. My diverse interests include traditional ensemble music, stemming from eight years of experience in a band program, as well as film, emerging technology, and animation. Within the animation industry, my primary focus lies in visual development, prop design, and background painting. I am passionate about expanding my artistic expertise and approach new projects with enthusiasm and dedication.</p>
             </div>
         </div>
